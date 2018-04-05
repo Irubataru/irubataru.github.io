@@ -7,7 +7,7 @@ url: http://irubataru.com # the base hostname & protocol for your site e.g. "htt
 author:
   name: Jonas Rylund Glesaaen
   twitter: irubataru
-  picture:
+  picture: /assets/images/robo-maid.gif
 twitter_username: irubataru
 github_username: irubataru
 logo: /assets/images/Penguin128.gif # path of site logo, e.g. "/assets/images/logo.png"
