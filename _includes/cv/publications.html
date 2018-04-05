@@ -1,0 +1,42 @@
+{% if cv.publications %}
+  <div id="publications" class="entry">
+    <header class="entry-header">
+      <h3 class="entry-title">Publications</h3>
+    </header>
+
+    <div class="entry-content">
+      {% for p in cv.publications %}
+        {% if p.name %}
+          <h4 class="title">
+            {% if p.website %}
+              <a href="{{ p.website }}">{{ p.name }}</a>
+            {% else %}
+              {{ p.name }}
+            {% endif %}
+          </h4>
+        {% endif %}
+        {% if p.releaseDate %}
+          <div class="date">{{ p.releaseDate }}</div>
+        {% endif %}
+        {% if p.publisher or p.coauthors %}
+          <h5 class="publisher">
+            {% if p.publisher %}
+              {{ p.publisher | prepend: 'Published by ' }}
+            {% endif %}
+            {% if p.publisher and p.coauthors %}
+              <br/>
+            {% endif %}
+            {% if p.coauthors %}
+              {{ p.coauthors | prepend: 'Co-authors: ' }}
+            {% endif %}
+          </h5>
+        {% endif %}
+        {% if p.summary %}
+          <div class="summary">{{ p.summary | markdownify }}</div>
+        {% else %}
+          <br/>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

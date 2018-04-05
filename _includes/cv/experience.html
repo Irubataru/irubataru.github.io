@@ -1,0 +1,45 @@
+{% if cv.experience %}
+  <div id="experience" class="entry">
+    <header class="entry-header">
+      <h3 class="entry-title">Experience</h3>
+    </header>
+
+    <div class="entry-content">
+      {% for e in cv.experience %}
+        {% if e.title %}
+          <h3 class="name">
+            {% if e.website %}
+              <a href="{{ e.website }}">{{ e.title }}</a>
+            {% else %}
+              {{ e.title }}
+            {% endif %}
+          </h3>
+        {% endif %}
+        {% for p in e.posts %}
+          {% if p.name %}
+            <h5 class="position">
+              {% if p.website %}
+                <a href="{{ p.website }}">{{ p.name }}</a>
+              {% else %}
+                {{ p.name }}
+              {% endif %}
+            </h5>
+            <div style="margin-bottom: 1rem">
+              {% if p.date %}
+                <span class="date startDate">{{ p.date }}</span>
+              {% endif %}
+              {% if p.professor %}
+                <span style="font-size: 80%">, {{ p.professor }}</span>
+              {% endif %}
+            </div>
+            {% if p.summary %}
+              <div class="summary">
+                <p>{{ p.summary }}</p>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

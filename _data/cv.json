@@ -1,0 +1,209 @@
+{
+  "basics": {
+    "name": "Jonas Rylund Glesaaen",
+    "label": "Certified perfectionist",
+    "picture": "",
+    "email": "jonas@glesaaen.com",
+    "website": "http://irubataru.com",
+    "summary": "",
+    "profiles": [
+      {
+        "network": "Github",
+        "icon": "github",
+        "username": "irubataru",
+        "url": "https://github.com/Irubataru"
+      },
+      {
+        "network": "GitLab",
+        "icon": "gitlab",
+        "username": "irubataru",
+        "url": "https://gitlab.com/Irubataru"
+      },
+      {
+        "network": "Linkedin",
+        "icon": "linkedin",
+        "username": "jonas-glesaaen",
+        "url": "https://www.linkedin.com/in/jonas-glesaaen-49a367158/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Swansea University",
+      "position": "Postdoctoral researcher",
+      "startDate": "2016-10-01",
+      "endDate": "",
+      "summary": "Implementation of various algorithms into the openQCD code base; study of the complex Langevin algorithm and its behaviour in relation to the sign problem; study of baryons at deconfinement, and past-deconfinement temperatures; application of various techniques from machine learning to the problem of spectral reconstruction"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Johann Wolfgang Goethe-Universitët",
+      "area": "Lattice QCD",
+      "studyType": "Ph.D.",
+      "startDate": "2013-08-01",
+      "endDate": "2016-07-31",
+      "summary": " Phase diagram of QCD, lattice QCD, analytic methods, cold and dense, heavy QCD, hopping parameter expansion, strong coupling expansion, graph theory."
+    },
+    {
+      "institution": "Norwegian University of Science and Technology (NTNU)",
+      "area": "Particle physics",
+      "studyType": "Master of Science",
+      "startDate": "2008-08-01",
+      "endDate": "2013-05-31",
+      "gpa": "Graduate of excellence",
+      "summary": "Phase diagram of QCD, effective models, quark extended linear sigma model, the renormalisation group."
+    }
+  ],
+  "theses": [
+    {
+      "name": "Heavy Quark QCD at Finite Temperature and Density Using an Effective Theory",
+      "supervisor": "Prof. Dr. Owe Philipsen, and Prof. Dr.  Dirk-Hermann Rischke",
+      "releaseDate": "2016-07-31",
+      "website": "https://github.com/Irubataru/phd-thesis",
+      "summary": "In this work I used an effective theory approach to study the cold and dense limit of heavy QCD from first principles. I developed both computational and graphical tools and methods for carrying out the necessary mathematics to high order. Much of the work is also dedicated to the methods of resummation and their advantages."
+    },
+    {
+      "name": "The Chiral Phase Transition in QCD: Mean-Field Versus the Functional Renormalisation Group",
+      "supervisor": "Prof. Jens Oluf Andersen",
+      "releaseDate": "2013-05-31",
+      "summary": "For my masters work I made use of low energy effective theories, more specifically the quark extended linear sigma model, to analyse the properties of the breaking of chiral symmetry in QCD, and the emerging phase diagram. Also made use of the functional renormalisation group to extract the correct low energy properties of the quantum field theory."
+    }
+  ],
+  "publications": [
+    {
+      "name": "Complex Langevin Simulation of a Random Matrix Model at Nonzero Chemical Potential",
+      "publisher": "Journal of High Energy Physics (JHEP)",
+      "releaseDate": "2018-03-06",
+      "website": "https://link.springer.com/article/10.1007%2FJHEP03%282018%29015",
+      "coauthors": "J. Bloch, J. J. M. Verbaarschot, and S. Zafeiropoulos"
+    },
+    {
+      "name": "Equation of state for cold and dense heavy QCD",
+      "publisher": "Journal of High Energy Physics (JHEP)",
+      "releaseDate": "2016-03-15",
+      "website": "https://link.springer.com/article/10.1007%2FJHEP03%282018%29015",
+      "coauthors": "M. Neuman, and O. Philipsen"
+    }
+  ],
+  "skills": [
+    {
+      "name": "C++",
+      "keywords": [
+        "Experienced in OO programming",
+        "Template Meta Programming",
+        "MPI",
+        "the C++14 standard",
+        "boost",
+        "GSL",
+        "other scientific libraries"
+      ]
+    },
+    {
+      "name": "Other",
+      "keywords": [
+        "Mathematica",
+        "JavaScript",
+        "Python (tensorflow)",
+        "VBA"
+      ]
+    },
+    {
+      "name": "Typography",
+      "keywords": [
+        "LaTeX",
+        "HTML",
+        "CSS",
+        "Jekyll"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Norwegian",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Excellent (IELTS 8.5)"
+    },
+    {
+      "language": "Japanese",
+      "fluency": "Basic"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Teaching, Goethe Universitët",
+      "posts": [
+        {
+          "name": "Introductory course to the C++ programming language",
+          "date": "2015-10",
+          "website": "https://github.com/Irubataru/cpp-lecture-2015",
+          "summary": "Taught a full week intensive course on the C++ programming language, which is a prerequisite for the students who wish to attend the numerical physics course taught by Prof. Lindenstruth"
+        },
+        {
+          "name": "Quantum field theory II",
+          "date": "SS15",
+          "professor": "Jun Prof. Dr. Marc Wagner"
+        },
+        {
+          "name": "Statistical physics",
+          "date": "WS14",
+          "professor": "Prof. Dr. Owe Philipsen"
+        },
+        {
+          "name": "Introductory Quantum Mechanics",
+          "date": "SS14",
+          "professor": "Prof. Dr. Owe Philipsen"
+        },
+        {
+          "name": "Programming for Physicists",
+          "date": "WS13",
+          "professor": "Jun Prof. Dr. Marc Wagner"
+        }
+      ]
+    },
+    {
+      "title": "Teaching, NTNU",
+      "posts": [
+        {
+          "name": "Statistical Physics",
+          "date": "autumn 2012",
+          "professor": "Prof. Kåre Olaussen"
+        },
+        {
+          "name": "Computational Physics",
+          "professor": "Prof. Alex Hansen",
+          "date": "spring 2012",
+          "summary": "Created and published solutions to the homework and lectured once a week."
+        },
+        {
+          "name": "Quantum Mechanics II",
+          "date": "autumn 2011, autumn 2012",
+          "professor": "Prof. Jan Myrheim"
+        },
+        {
+          "name": "..."
+        }
+      ]
+    },
+    {
+      "title": "Other",
+      "posts": [
+        {
+          "name": "Service desk administrator",
+          "date": "summer 2011, summer 2012, winter 2012",
+          "professor": "PGS, Oslo, Norway",
+          "summary": "Management and administration of user databases, PC repair, general support tasks."
+        },
+        {
+          "name": "Internship, material science",
+          "date": "summer 2010",
+          "professor": "National Institute of Material Science (NIMS), Tsukuba, Japan",
+          "summary": "Carried our x-ray diffraction laboratory work on thin film materials sputtered with ytterbium crystals. Held and took courses on various material science related subjects. Observed synchrotron experiments at the KEK Photon Factory synchrotron."
+        }
+      ]
+    }
+  ]
+}
