@@ -136,7 +136,7 @@ As an intermediate step I opted to roll a very tiny per-file unit testing
 "framework" myself. This is far from ideal, but it made writing my own tests a
 lot simples and has the added benefit of being organised in a unit testing
 layout where one registers tests. The framework code can be seen
-[here][unit-testing-framework]. A typical usecase would look like this
+[here][unit-testing-framework]. A typical use case would look like this
 
 ``` c
 new_test_module();
@@ -152,7 +152,16 @@ The `report_test_results()` function would pretty print the test results and
 list all failed tests if any. I am pretty pleased with the result, at least
 considering its simplicity.
 
-Towards the end of the project is when I 
+Towards the end of the project is when testing became a bit more important to
+guarantee that I hadn't broken anything my decision to not spend a month or so
+properly implementing a unit testing framework finally hit me. openQCD has over
+150 tests, most of which had to be run at different layers of optimisations and
+with different boundary conditions. In addition to that they also generally do
+not result in a clear "success/failure" state, but rather give absolute
+differences where one should have a feel for what is the accepted tolerance for
+that particular function. Running through all the tests typically took me an
+hour or so of manual work and is definitely something I would do different if I
+were to start over again.
  
 
 ## Building
