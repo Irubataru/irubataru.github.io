@@ -34,4 +34,5 @@ google_fonts:
 
 navigation_pages:
   - about.md
+  - posts.md
   - cv.md

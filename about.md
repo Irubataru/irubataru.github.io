@@ -17,4 +17,5 @@ spreading these methodologies to my colleagues and the community.
 
 I am not exactly sure what this website will be used for. I made it because I
 find creating websites fun, and thought it was about time I got my own.
-Hopefully I will fill it with something interesting.
+Hopefully I will fill it with something that will be of interest to someone,
+somewhere.
