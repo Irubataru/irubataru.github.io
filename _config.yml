@@ -10,7 +10,7 @@ remote_theme: "mmistakes/jekyll-theme-basically-basic"
 lang: en-UK
 title: Home of Jonas Glesaaen
 email: jonas@glesaaen.com
-description: Hopefully useful to someone somewhere
+description: Hopefully useful to someone, somewhere
 baseurl: # the optional subpath of your site, e.g. "/blog"
 url: http://irubataru.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 author:
