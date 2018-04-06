@@ -17,13 +17,13 @@
         {% endif %}
         {% for p in e.posts %}
           {% if p.name %}
-            <h5 class="position">
+            <h4 class="position">
               {% if p.website %}
                 <a href="{{ p.website }}">{{ p.name }}</a>
               {% else %}
                 {{ p.name }}
               {% endif %}
-            </h5>
+            </h4>
             <div style="margin-bottom: 1rem">
               {% if p.date %}
                 <span class="date startDate">{{ p.date }}</span>
@@ -39,6 +39,9 @@
             {% endif %}
           {% endif %}
         {% endfor %}
+        {% if forloop.last == false %}
+        <hr/>
+        {% endif %}
       {% endfor %}
     </div>
   </div>

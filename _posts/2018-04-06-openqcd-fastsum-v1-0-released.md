@@ -52,6 +52,7 @@ namely anisotropic actions and stout smeared gauge links, but I will not focus
 on those in this blog post. Rather I'd like to mention the modifications I made
 to the code to keep myself sane.
 
+
 ## vim setup
 
 Although my vim setup wasn't any different in this case to how it always is for
@@ -85,7 +86,7 @@ auto-formatter. My code formatter of choice is of course clang-format
 I have still not fully come to terms with how to integrate auto-formatters with
 a source control work flow, as far as I see it there is no particularly elegant
 way of doing it. Specially if you ever decided to make changes to your style
-definitions in the middle of development (which I did), this will leave you with
+definitions in the middle of development (which I did); this will leave you with
 a very unsatisfactory commit, or series of commits, that change a lot of lines,
 but no actual code (as long as your formatter isn't broken).
 
@@ -114,11 +115,45 @@ clang-tidy with the option
 ```
 
 which automatically adds braces around all statements for which they have been
-left out.
+left out. I also encountered [an interesting bug][bug], but it wasn't anything a
+quick python script couldn't deal with.
 
 
 ## Testing
 
+The next order of business was to implement some sort of testing. Ideally I
+would introduce a full fledged unit testing framework, set up CI, and let
+computers do the rest; it was however not that easy.
+
+I started by looking for good unit testing frameworks for C, and came across
+[this great question][unit-testing-question] on stackoverflow, I also looked
+into using the GoogleTest framework to test C code, something [this blog
+post][googletest-for-C] describes. Unfortunately, the existing tests would need
+a complete rewrite to work together with a unit testing framework, something I
+did not have the time for.
+
+As an intermediate step I opted to roll a very tiny per-file unit testing
+"framework" myself. This is far from ideal, but it made writing my own tests a
+lot simples and has the added benefit of being organised in a unit testing
+layout where one registers tests. The framework code can be seen
+[here][unit-testing-framework]. A typical usecase would look like this
+
+``` c
+new_test_module();
+
+register_test(1, "Partial boundary copies su3_dble");
+print_test_header(1);
+fail_test_if(1, /* test clause */);
+
+report_test_results();
+```
+
+The `report_test_results()` function would pretty print the test results and
+list all failed tests if any. I am pretty pleased with the result, at least
+considering its simplicity.
+
+Towards the end of the project is when I 
+ 
 
 ## Building
 
@@ -131,3 +166,7 @@ left out.
 
 [ycm]: https://github.com/Valloric/YouCompleteMe
 [ctrlspace]: https://github.com/vim-ctrlspace/vim-ctrlspace/
+[bug]: https://bugs.llvm.org/show_bug.cgi?id=36866
+[unit-testing-question]: https://stackoverflow.com/questions/748503/how-do-you-introduce-unit-testing-into-a-large-legacy-c-c-codebase
+[googletest-for-C]: https://meekrosoft.wordpress.com/2009/11/09/unit-testing-c-code-with-the-googletest-framework/
+[unit-testing-framework]: https://gitlab.com/fastsum/openqcd-fastsum/tree/master/devel/testing_utilities
