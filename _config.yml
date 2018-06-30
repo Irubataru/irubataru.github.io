@@ -12,7 +12,7 @@ title: Home of Jonas Glesaaen
 email: jonas@glesaaen.com
 description: Hopefully useful to someone, somewhere
 baseurl: # the optional subpath of your site, e.g. "/blog"
-url: http://irubataru.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url: https://irubataru.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 author:
   name: Jonas Rylund Glesaaen
   twitter: irubataru
