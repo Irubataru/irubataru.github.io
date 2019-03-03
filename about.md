@@ -3,9 +3,9 @@ title: About
 layout: about
 ---
 
-Welcome to the home of Jonas Rylund Glesaaen. I am currently a postdoctoral
-researcher working on lattice QCD at Swansea university. Besides an interest in
-physics I also spend a lot of my time on:
+Welcome to the home of Jonas Rylund Glesaaen. I have been a physicist my whole
+life, but has recently left the comfort of academia to see what else the world has
+to offer. Besides an interest in physics I also spend a lot of my time on:
 
 * Computer Science (CS)
 * High Performance Computing (HPC)

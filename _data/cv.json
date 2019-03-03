@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Jonas Rylund Glesaaen",
-    "label": "Certified perfectionist",
+    "label": "Perfectionist",
     "picture": "",
     "email": "jonas@glesaaen.com",
     "website": "https://irubataru.com",
@@ -29,10 +29,17 @@
   },
   "work": [
     {
+      "company": "Share Control AS",
+      "position": "Software developer",
+      "startDate": "2018-10-15",
+      "endDate": "",
+      "summary": "Implementing solutions for the IFRS 16 reporting standard in various systems including Excel VBA, Power BI, and web apps making use of the Office 365 ecosystem"
+    },
+    {
       "company": "Swansea University",
       "position": "Postdoctoral researcher",
       "startDate": "2016-10-01",
-      "endDate": "",
+      "endDate": "2018-09-30",
       "summary": "Implementation of various algorithms into the openQCD code base; study of the complex Langevin algorithm and its behaviour in relation to the sign problem; study of baryons at deconfinement, and past-deconfinement temperatures; application of various techniques from machine learning to the problem of spectral reconstruction"
     }
   ],
@@ -72,6 +79,19 @@
     }
   ],
   "publications": [
+    {
+      "name": "Hadronic spectrum calculations in the quark-gluon plasma",
+      "publisher": "PoS for 36th annual international symposium on lattice field theory",
+      "releaseDate": "2018-12-19",
+      "website": "https://arxiv.org/abs/1812.08151",
+      "coauthors": "G. Aarts, C. Allton, S. Hands, B. Jäger, and J. Skullerud"
+    },
+    {
+      "name": "Alan Turing DGS Report: Fairness in algorithmic decision making",
+      "publisher": "The Alan Turing Institute",
+      "releaseDate": "to be published",
+      "coauthors": "P. Byfield, P-M. Carfantan, R. Chowdhurry, O. Costilla-Reyes, D. Fuhrmann, Q. He, A. Kirsch, J. Lee, M. Malekzadeh, E. Srig, C. Tan, E. Turner, D. Q. Vinh,"
+    },
     {
       "name": "Complex Langevin Simulation of a Random Matrix Model at Nonzero Chemical Potential",
       "publisher": "Journal of High Energy Physics (JHEP)",
@@ -134,6 +154,16 @@
     }
   ],
   "experience": [
+    {
+      "title": "Alan Turing Institute",
+      "posts": [
+        {
+          "name": "Data Study Group, Fairness in AI",
+          "date": "April 2018",
+          "summary": "Teamwork event where we worked for a week on the challenges of measuring and guaranteeing fairness in algorithmic decision making."
+        }
+      ]
+    },
     {
       "title": "Teaching, Goethe Universitët",
       "posts": [

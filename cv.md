@@ -1,5 +1,5 @@
 ---
-title: Curriculum Vitae
+title: Résumé
 layout: cv
 actions:
   - label: "Download as PDF"
