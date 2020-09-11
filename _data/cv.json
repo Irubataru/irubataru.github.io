@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Jonas Rylund Glesaaen",
-    "label": "Perfectionist",
+    "label": "Advocate of good academic software",
     "picture": "",
     "email": "jonas@glesaaen.com",
     "website": "https://irubataru.com",
@@ -80,6 +80,13 @@
   ],
   "publications": [
     {
+      "name": "Properties of the QCD thermal transition with Nf=2+1 flavours of Wilson quark",
+      "publisher": "Physical Review D",
+      "releaseDate": "to be published, eprint available",
+      "website": "https://arxiv.org/abs/2007.04188",
+      "coauthors": "G. Aarts, C. Allton, S. Hands, B. Jäger, S. Kim, M.P. Lombardo, A.A. Nikolaev, S.M. Ryan, J.-I. Skullerud, L.-K. Wu"
+    },
+    {
       "name": "Hadronic spectrum calculations in the quark-gluon plasma",
       "publisher": "PoS for 36th annual international symposium on lattice field theory",
       "releaseDate": "2018-12-19",
@@ -87,9 +94,10 @@
       "coauthors": "G. Aarts, C. Allton, S. Hands, B. Jäger, and J. Skullerud"
     },
     {
-      "name": "Alan Turing DGS Report: Fairness in algorithmic decision making",
+      "name": "Alan Turing DSG Report: Fairness in algorithmic decision making",
       "publisher": "The Alan Turing Institute",
-      "releaseDate": "to be published",
+      "releaseDate": "2019-02-05",
+      "website": "https://zenodo.org/record/2557795#.X1tXVO9fguU",
       "coauthors": "P. Byfield, P-M. Carfantan, R. Chowdhurry, O. Costilla-Reyes, D. Fuhrmann, Q. He, A. Kirsch, J. Lee, M. Malekzadeh, E. Srig, C. Tan, E. Turner, D. Q. Vinh,"
     },
     {
@@ -109,10 +117,11 @@
   ],
   "skills": [
     {
-      "name": "C++",
+      "name": "C/C++",
       "keywords": [
         "Experienced in OO programming",
         "Template Meta Programming",
+        "unit testing",
         "MPI",
         "the C++14 standard",
         "boost",
@@ -126,7 +135,19 @@
         "Mathematica",
         "JavaScript",
         "Python (tensorflow)",
+        "Lua",
+        "fortran",
         "VBA"
+      ]
+    },
+    {
+      "name": "Tools",
+      "keywords": [
+        "Linux",
+        "git",
+        "CI (GitLab)",
+        "shell scripting",
+        "Ansible"
       ]
     },
     {
