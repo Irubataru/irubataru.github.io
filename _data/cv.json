@@ -29,10 +29,17 @@
   },
   "work": [
     {
+      "company": "SINTEF Digital, Optimization",
+      "position": "Researcher",
+      "startDate": "2021-05-18",
+      "endDate": "",
+      "summary": "Solving interesting optimization problems both with a focus on finding real world solutions and application as well as working on more researched focussed projects."
+    },
+    {
       "company": "Share Control AS",
       "position": "Software developer",
       "startDate": "2018-10-15",
-      "endDate": "",
+      "endDate": "2021-05-14",
       "summary": "Implementing solutions for the IFRS 16 reporting standard in various systems including Excel VBA, Power BI, and web apps making use of the Office 365 ecosystem"
     },
     {
