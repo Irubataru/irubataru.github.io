@@ -8,13 +8,13 @@
 remote_theme: "mmistakes/jekyll-theme-basically-basic"
 
 lang: en-UK
-title: Home of Jonas Glesaaen
-email: jonas@glesaaen.com
+title: Home of Aleksandra Glesaaen
+email: aleksandra@glesaaen.com
 description: Hopefully useful to someone, somewhere
 baseurl: # the optional subpath of your site, e.g. "/blog"
 url: https://irubataru.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 author:
-  name: Jonas Rylund Glesaaen
+  name: Aleksandra Rylund Glesaaen
   twitter: irubataru
   picture: /assets/images/robo-maid.gif
 twitter_username: irubataru

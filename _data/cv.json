@@ -1,9 +1,9 @@
 {
   "basics": {
-    "name": "Jonas Rylund Glesaaen",
+    "name": "Aleksandra Rylund Glesaaen",
     "label": "Advocate of good academic software",
     "picture": "",
-    "email": "jonas@glesaaen.com",
+    "email": "aleksandra@glesaaen.com",
     "website": "https://irubataru.com",
     "summary": "",
     "profiles": [
@@ -18,12 +18,6 @@
         "icon": "gitlab",
         "username": "irubataru",
         "url": "https://gitlab.com/Irubataru"
-      },
-      {
-        "network": "Linkedin",
-        "icon": "linkedin",
-        "username": "jonas-glesaaen",
-        "url": "https://www.linkedin.com/in/jonas-glesaaen-49a367158/"
       }
     ]
   },
