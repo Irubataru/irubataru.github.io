@@ -1,7 +1,12 @@
 ---
 title: "Converting jekyll themes"
-description: "Lorem ipsum dolor sit amet"
-pubDate: "Jun 30 2018"
+slug: "converting-jekyll-themes"
+description: |
+  I took a break form web development after my last spout of website creations and
+  haven't really touched it since. However, recently a co-worker asked me for help
+  hooking him up with a website for his a cappella group, and as I am incapable of
+  saying no, I thought, why not?
+publishDate: "June 30 2018"
 ---
 
 I took a break form web development after my last spout of website creations and
@@ -32,11 +37,11 @@ couple of things in a jekyll-like way:
 
  1. Every part of the HTML document that feels like a component, should be a
     component that could be included with a
+    ```jinja
     {% raw %}
-    ```
     {% include compnent.html %}
-    ```
     {% endraw %}
+    ```
  2. Site navigation should be handled through a YAML file.
 
  3. There should exist sensible layouts for what you want to do, and they should
@@ -60,13 +65,12 @@ interested in finding a solution to:
     a page could consist of multiple cards. It would be great if you in jekyll
     could easily specify your own begin/end environment so that a user could
     write
-    {% raw %}
-    ``` ruby
+
+    ```jinja
     {% card %}
       content...
     {% endcard %}
     ```
-    {% endraw %}
     Rather than the more traditional
 
     ``` html
@@ -80,13 +84,12 @@ interested in finding a solution to:
     from. It would also allow for a couple of interesting use cases. One
     solution would be to make `card_begin.html` and `card_end.html` elements
     which can then be used through
-    {% raw %}
-    ```
+
+    ```jinja
     {% include card_begin.html %}
       content...
     {% include card_end.html %}
     ```
-    {% endraw %}
     This is an OK temporary solution, but I am not all that happy with it.
 
  2. Better integration between jekyll and CSS. This is probably a problem with

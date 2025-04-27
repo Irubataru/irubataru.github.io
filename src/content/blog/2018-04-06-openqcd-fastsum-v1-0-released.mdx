@@ -1,8 +1,14 @@
 ---
 title: "openQCD-FASTSUM v1.0 released"
-description: "Lorem ipsum dolor sit amet"
-pubDate: "Apr 06 2018"
+slug: "openqcd-fastsum-v1.0-released"
+description: |
+  After having worked on extending openQCD to fit the needs of my collaboration
+  (FASTSUM) for almost a year and a half, I am finally able to release it to the
+  public with reasonable confidence that it works.
+publishDate: "April 06 2018"
 ---
+
+import { Code } from 'astro:components';
 
 After having worked on extending openQCD to fit the needs of my collaboration
 (FASTSUM) for almost a year and a half, I am finally able to release it to the
@@ -52,7 +58,6 @@ namely anisotropic actions and stout smeared gauge links, but I will not focus
 on those in this blog post. Rather I'd like to mention the modifications I made
 to the code to keep myself sane.
 
-
 ## vim set-up
 
 Although my vim set-up wasn't any different in this case to how it always is for
@@ -76,12 +81,11 @@ Plug 'rhysd/vim-clang-format', { 'for': ['cpp', 'hpp', 'c'] } |
       \ Plug 'kana/vim-operator-user'
 ```
 
-
-## Formatting 
+## Formatting
 
 The first thing I did when I pulled the code was to run it through an
-auto-formatter. My code formatter of choice is of course clang-format
-:two_hearts:
+auto-formatter. My code formatter of choice is of course clang
+💕
 
 I have still not fully come to terms with how to integrate auto-formatters with
 a source control work flow, as far as I see it there is no particularly elegant
@@ -96,7 +100,7 @@ eyes than the original source definitely helped keep the fatigue at bay.
 At the very end of development, due to a very scary macro expand bug which can
 be summarised through this short example
 
-``` c
+```c
 #define add(x, y)   \
   *(x).a += *(y).a; \
   *(x).b += *(y).b
@@ -108,16 +112,15 @@ for (i = 0; i < LENGTH; ++i)
 
 I felt the sudden need to enforce braces around all control statements in the
 code, and thus I had my first use case for clang-tidy. Basically I ran
-clang-tidy with the option 
+clang-tidy with the option
 
-```
+```bash
 -checks="readability-braces-around-statements" -fix
 ```
 
 which automatically adds braces around all statements for which they have been
 left out. I also encountered [an interesting bug][bug], but it wasn't anything a
 quick python script couldn't deal with.
-
 
 ## Testing
 
@@ -148,9 +151,9 @@ fail_test_if(1, /* test clause */);
 report_test_results();
 ```
 
-The `report_test_results()` function would pretty print the test results and
-list all failed tests if any. I am pretty pleased with the result, at least
-considering its simplicity.
+The <Code code={`report_test_results()`} lang="c" inline /> function would
+pretty print the test results and list all failed tests if any. I am pretty
+pleased with the result, at least considering its simplicity.
 
 Towards the end of the project is when testing became a bit more important to
 guarantee that I hadn't broken anything my decision to not spend a month or so
@@ -162,7 +165,6 @@ differences where one should have a feel for what is the accepted tolerance for
 that particular function. Running through all the tests typically took me an
 hour or so of manual work and is definitely something I would do different if I
 were to start over again.
- 
 
 ## Building
 
@@ -191,31 +193,31 @@ would build everything with bazel, but as this is software used by physicist on
 HPC clusters on which modern software is hard to come by, I decided against
 this. For my new build system I had a couple of targets
 
- - _A portable build_, one should be able to build the code from anywhere. On
-   Linux this is most commonly achieved through the configure -> make pattern; I
-   am not a fan and wanted to achieve this by other means.
+- _A portable build_, one should be able to build the code from anywhere. On
+  Linux this is most commonly achieved through the configure -> make pattern; I
+  am not a fan and wanted to achieve this by other means.
 
- - _A configurable build_, one should not have to touch the source to configure
-   the build. Specifically I wanted to move the aforementioned `#define`
-   statements to a configure file so that it would be easier to keep separate
-   builds for separate lattice geometries.
+- _A configurable build_, one should not have to touch the source to configure
+  the build. Specifically I wanted to move the aforementioned `#define`
+  statements to a configure file so that it would be easier to keep separate
+  builds for separate lattice geometries.
 
- - _A tidy build_, as previously mentioned I was also aiming for a clean build
-   in which `.o` and `.d` files were placed in sub directories that mimicked
-   the folder structure from where the source was located.
+- _A tidy build_, as previously mentioned I was also aiming for a clean build
+  in which `.o` and `.d` files were placed in sub directories that mimicked
+  the folder structure from where the source was located.
 
- - _Logical build targets_, the original Makefile only had a single (reasonable)
-   target in most cases. For the rewrite I wanted targets that were both
-   granular and made sense to the user. This meant single targets for each of
-   the executables, targets for the testing modules, as well as targets to
-   create static libraries from the individual modules, and documentation targets.
+- _Logical build targets_, the original Makefile only had a single (reasonable)
+  target in most cases. For the rewrite I wanted targets that were both
+  granular and made sense to the user. This meant single targets for each of
+  the executables, targets for the testing modules, as well as targets to
+  create static libraries from the individual modules, and documentation targets.
 
- - _Build informatics_, I generally prefer it when the output of the program
-   somehow tells you from where it came and how it was built; in modern software
-   the most useful identifier is probably the git SHA. I also wanted to record
-   which compiler flags the users chose to pass. This is because the intrinsics
-   instruction set the code uses is determined by the user by setting flags such
-   as `-DAVX -DPM`, and this information is invaluable for debugging later.
+- _Build informatics_, I generally prefer it when the output of the program
+  somehow tells you from where it came and how it was built; in modern software
+  the most useful identifier is probably the git SHA. I also wanted to record
+  which compiler flags the users chose to pass. This is because the intrinsics
+  instruction set the code uses is determined by the user by setting flags such
+  as `-DAVX -DPM`, and this information is invaluable for debugging later.
 
 With these goals in mind I set out on a quest to build the ultimate `Makefile`.
 Although I have been an active Make user for many years, this knowledge has
@@ -230,7 +232,7 @@ The idea was to have a separate `compile_setting.txt` file which contained all
 of the user settings, and then have Make parse these settings. The config file
 would look something like this
 
-```
+```make
 CODELOC ..
 COMPILER /usr/bin/mpicc
 MPI_INCLUDE /usr/include/mpi
@@ -246,7 +248,6 @@ separate files, but this will be a task for another time.
 
 A more detailed explanation of the build system can be found on the [build
 system documentation][makefile-readme].
-
 
 ## const
 
@@ -268,34 +269,33 @@ have been left unmodified or not. Fixing this would require a not insignificant
 change to the flow of the code, something I was not going to do to achieve const
 correctness alone.
 
-
 ## The future
 
 Now that the code has been released and given a release tag it is time to look
 to the future. Besides fixing bugs I have a couple of further additions I want
 to make
 
- - _Unit testing_: as mentioned previously I feel the code would certainly
-   benefit from having a proper unit testing framework, specially if I could
-   hook it up to some sort of CI. As some of the tests actually require HPC
-   resources to compute in a reasonable time, I would need to run these jobs
-   remotely, but I see that as an interesting challenge.
+- _Unit testing_: as mentioned previously I feel the code would certainly
+  benefit from having a proper unit testing framework, specially if I could
+  hook it up to some sort of CI. As some of the tests actually require HPC
+  resources to compute in a reasonable time, I would need to run these jobs
+  remotely, but I see that as an interesting challenge.
 
- - _Propagator computation code_: for our project we require quark propagators
-   to be computed, which in turn require the fermion matrix to be inverted. We
-   could use chroma for this task, however that would put us back to square one
-   as inverting the fermion matrix is the very reasons we were having
-   performance issues in the first place. Instead of simply adding another
-   "main" program to the main folder, I'd rather made it a standalone thing. For
-   this I would need...
+- _Propagator computation code_: for our project we require quark propagators
+  to be computed, which in turn require the fermion matrix to be inverted. We
+  could use chroma for this task, however that would put us back to square one
+  as inverting the fermion matrix is the very reasons we were having
+  performance issues in the first place. Instead of simply adding another
+  "main" program to the main folder, I'd rather made it a standalone thing. For
+  this I would need...
 
- - _Creating a library_: although openQCD was never meant to be anything else
-   than a standalone code I am starting to see its potential as a standalone
-   library one could hook into when developing new software. On top of
-   facilitating the creation of a propagator computation code it would also make
-   my openQCD <-> chroma conversion programs that are necessary for us to make
-   use of chroma's fairly extensive analysis component.
- 
+- _Creating a library_: although openQCD was never meant to be anything else
+  than a standalone code I am starting to see its potential as a standalone
+  library one could hook into when developing new software. On top of
+  facilitating the creation of a propagator computation code it would also make
+  my openQCD  chroma conversion programs that are necessary for us to make
+  use of chroma's fairly extensive analysis component.
+
 As you can see there are quite a lot left to do in the limited time I have left
 of my contract.
 
@@ -306,7 +306,6 @@ groups made changes to for their own extensions as it has been updated in quite
 a few ways that alleviates potential developer fatigue.
 
 You can check our the code homepage [here][fastsum].
-
 
 [ycm]: https://github.com/Valloric/YouCompleteMe
 [ctrlspace]: https://github.com/vim-ctrlspace/vim-ctrlspace/

@@ -1,8 +1,17 @@
 ---
 title: "Developing in VBA (1)"
-description: "Lorem ipsum dolor sit amet"
-pubDate: "Mar 02 2019"
+slug: "developing-in-vba-1"
+description: |
+  Almost half a year ago I left academia in search of greener pastures; seeing the
+  title of this post you would naturally assume that this did not go particularly
+  well, but this post isn't about that. Rather, having made a serious attempt at
+  doing "serious programming" in VBA for a while now I wanted to write about my
+  experiences, and if I am lucky I might provide some tips for others who find
+  themselves in a similar situation.
+publishDate: "March 02 2019"
 ---
+
+import { Code } from 'astro:components';
 
 Almost half a year ago I left academia in search of greener pastures; seeing the
 title of this post you would naturally assume that this did not go particularly
@@ -54,9 +63,9 @@ This is the tried and true method used for decades by library developers in C.
 As C also lacks namespaces, one normally solves this by prepending the function
 name with the namespace it belongs to:
 
-{% highlight vb %}
+```vb
 Public Function MyNameSpace_MyFunction()
-{% endhighlight %}
+```
 
 There are a couple of issues with this approach:
 
@@ -76,7 +85,6 @@ There are a couple of issues with this approach:
     named `MyNamespace-MyFunction`, you have to do that by calling
     `[MyNamespace-MyFunction]()`.
 
-
 #### 2. Never refer to a function without its module name
 
 This isn't really a solution but more of a methodology. If you are adamant about
@@ -93,25 +101,25 @@ sense, you can make use of VBA's somewhat obscure static classes. We will look
 at these closer in the next post, but you can create these by setting the
 `PredeclaredId` flag for you class
 
-{% highlight vb %}
+```vb
 Attribute VB_PredeclaredId = True
-{% endhighlight %}
+```
 
 If this option is `True` (which by default it is not) then VBA creates a default
 instance of the class, which much like a singleton exists as a unique instance.
 This might not sound like a very good idea, but it allows you to write things
 such as
 
-{% highlight vb %}
+```vb
 Result = MyClass.Foo()
-{% endhighlight %}
+```
 
 instead of having to first create an instance of you class
 
-{% highlight vb %}
+```vb
 Dim ClassInstance As New MyClass
 Result = ClassInstance.Foo()
-{% endhighlight %}
+```
 
 As class functions are not available in the global namespace this will make them
 unavailable if you do not prefix your calls with `MyClass`, effectively creating
@@ -134,17 +142,17 @@ for the two things. Thus if you have two variables `x` and `y`, and you want to
 assign `y` to `x` then you have to write one of two cases depending on whether
 they are values or objects:
 
-{% highlight vb %}
+```vb
 x = y      ' If they are values
 Set x = y  ' If they are objects
-{% endhighlight %}
+```
 
 In general this is fine as you normally know which of the two cases to use[^1],
 however, as `Variant` is a fairly commonly used concept in VBA code you need a
 utility function every time you want to carry out an assignment of two
 `Variant`s.
 
-{% highlight vb %}
+```vb
 '@Description("Assign Rhs to Lhs.")
 Public Sub AssignVariants(ByRef Lhs As Variant, ByVal Rhs As Variant)
   If VBA.IsObject(Rhs) Then
@@ -153,10 +161,11 @@ Public Sub AssignVariants(ByRef Lhs As Variant, ByVal Rhs As Variant)
     Lhs = Rhs
   End If
 End Function
-{% endhighlight %}
+```
 
-The existence of `Set` is documented in [Microsoft's guidelines for converting
-VBA code to .Net][set-documentation], and they have the following to say:
+The existence of <Code code={`Set`} lang="vb" inline /> is documented in
+[Microsoft's guidelines for converting VBA code to .Net][set-documentation], and
+they have the following to say:
 
 > **Set Keyword**. In VBA, the **Set** keyword is necessary to distinguish
 > between assignment of an object and assignment of the default property of the
@@ -200,7 +209,7 @@ can assign one UDT to another with ease, so why can't you pass it by value?
 Truthfully, I have no idea, and for some reason you can't cheat by forcing it to
 a copy by wrapping it in braces either like you can with other values
 
-{% highlight vb %}
+```vb
 Public Sub PassByValue()
   Dim Value As String: Value = "Hello"
 
@@ -214,7 +223,7 @@ End Sub
 Private Sub ChangeToWorld(ByRef Value As String)
   Value = "World"
 End Sub
-{% endhighlight %}
+```
 
 However, we learned earlier that you can't pass objects as immutable arguments
 to functions either, so in that regard it isn't in any way worse. It is mostly
@@ -229,16 +238,16 @@ useless. This is because UDT's are as I mentioned earlier values, and although
 you pass them by reference to functions, VBA has no concept of a by reference
 return value. Thus if you have a type
 
-{% highlight vb %}
+```vb
 Public Type OptionalLong
   Has As Boolean
   Value As Long
 End Type
-{% endhighlight %}
+```
 
 and a class containing it
 
-{% highlight vb %}
+```vb
 ' Class OptionalValueHolder
 Private mValue As OptionalLong
 
@@ -251,18 +260,18 @@ End Property
 Public Property Let Value(ByRef Value As OptionalLong)
   mValue = Value
 End Property
-{% endhighlight %}
+```
 
 and try to use this class
 
-{% highlight vb %}
+```vb
 Public Sub TestClass()
   Dim ValueHolder As New OptionalValueHolder
 
   ValueHolder.Value.Has = True  ' This does nothing
   ValueHolder.Value.Value = 42  ' Neither does this
 End Public
-{% endhighlight %}
+```
 
 then the intuitive way of using it does absolutely nothing because you are
 modifying a clone that instantly goes out of scope after the assignment. This
@@ -317,7 +326,6 @@ for the various coding patterns I will present in the next post. Although this
 seems like a long list, it has nothing compared to javascript, and that is one
 of the most used languages in the world these days. If they can find ways to
 make that language usable, then there is hope for making VBA usable as well.
-
 
 [^1]: Although forgetting `Set` is probably my most common mistake, bundled
       together with the fact that there isn't really any way of finding these

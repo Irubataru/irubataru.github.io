@@ -1,7 +1,12 @@
 ---
 title: "Website inauguration"
-description: "Lorem ipsum dolor sit amet"
-pubDate: "Apr 05 2018"
+slug: "website-inauguration"
+description: |
+  Hello to whomever might read this. This is (as is probably all too apparent) the
+  first post on my brand new homepage. This basically spurred out of the creation
+  of a separate web page of a separate project as I discovered how much fun making
+  these things actually are.
+publishDate: "April 05 2018"
 ---
 
 Hello to whomever might read this. This is (as is probably all too apparent) the
