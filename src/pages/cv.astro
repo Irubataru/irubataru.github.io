@@ -1,0 +1,498 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'CV';
+const description = 'My personal CV.';
+const permalink = `${Astro.site?.href}cv`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="cv">
+  <div class="container">
+    <header class="cv-header">
+      <h1>Aleksandra Glesaaen Ødegård</h1>
+      <p class="cv-tagline">Advocate of good academic software</p>
+    </header>
+
+    <section class="cv-section">
+      <h2>📧 Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <strong>Email:</strong> your.email@example.com
+        </div>
+        <div class="contact-item">
+          <strong>Location:</strong> Norway
+        </div>
+        <div class="contact-item">
+          <strong>LinkedIn:</strong> linkedin.com/in/yourprofile
+        </div>
+        <div class="contact-item">
+          <strong>GitHub:</strong> github.com/yourusername
+        </div>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>💼 Work Experience</h2>
+
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-title-group">
+            <h3>Omegapoint Norge</h3>
+            <h4>Expert</h4>
+          </div>
+          <div class="cv-duration">2024-11 - Present</div>
+        </div>
+        <p>
+          At Omegapoint I led multiple internal projects focused on technology
+          exploration and process optimization, expanding my expertise in
+          frontend development, Azure cloud services, and Kubernetes
+          orchestration. I developed an AI-driven search solution for the
+          company event system and drove significant process improvements by
+          standardizing integration testing practices to align with industry
+          standards and restructuring project architectures to follow
+          established conventions.
+        </p>
+        <div class="cv-tags">
+          <span class="tag">Azure</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">AI/ML</span>
+          <span class="tag">Frontend</span>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-title-group">
+            <h3>SINTEF Digital, Optimization</h3>
+            <h4>Researcher</h4>
+          </div>
+          <div class="cv-duration">2021-05 - 2024-10</div>
+        </div>
+        <p>
+          As a researcher in the optimization group at SINTEF, I have developed
+          advanced algorithms and applications to address complex challenges in
+          healthcare, the aviation industry, construction, quantum computing,
+          and the architecture sector. In addition to my technical development
+          work, I held market responsibility for the healthcare sector, where I
+          worked closely with stakeholders to understand their specific needs
+          and challenges, tailoring technological solutions that drive
+          efficiency and innovation within the sector.
+        </p>
+        <div class="cv-tags">
+          <span class="tag">Healthcare</span>
+          <span class="tag">Optimization</span>
+          <span class="tag">Quantum Computing</span>
+          <span class="tag">Research</span>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-title-group">
+            <h3>Share Control AS</h3>
+            <h4>Software Developer and Project Leader</h4>
+          </div>
+          <div class="cv-duration">2018-10 - 2021-05</div>
+        </div>
+        <p>
+          In my role as a software developer and project manager at
+          ShareControl, I developed a customized application in Excel VBA to
+          manage and monitor lease contracts in compliance with the IFRS 16
+          accounting standard. The application was designed to provide clients
+          with a straightforward overview and perform the necessary
+          calculations as part of their accounting processes, while also being
+          transparent and easily auditable to meet documentation and
+          traceability requirements. Through this work, I gained significant
+          experience in interdisciplinary collaboration and communication
+          across fields.
+        </p>
+        <div class="cv-tags">
+          <span class="tag">VBA</span>
+          <span class="tag">Project Management</span>
+          <span class="tag">IFRS 16</span>
+          <span class="tag">Excel</span>
+        </div>
+      </div>
+
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-title-group">
+            <h3>Department of Physics, Swansea University</h3>
+            <h4>Postdoctoral Researcher</h4>
+          </div>
+          <div class="cv-duration">2016-10 - 2018-10</div>
+        </div>
+        <p>
+          As a postdoctoral researcher at the Department of Physics at Swansea
+          University, I worked on improving the performance and functionality
+          of an existing C-based legacy code for advanced particle physics
+          calculations. Through optimization and detailed adjustments,
+          including the use of hand-written assembly operations, I achieved an
+          impressive performance increase, with a 20x improvement compared to
+          the previous code.
+        </p>
+        <p>
+          She also gained valuable experience with unit
+          testing of complex, parallelized code, contributing to increased
+          reliability and maintainability. Additionally, Aleksandra explored
+          applications of machine learning to open new research opportunities
+          in hadron spectroscopy.
+        </p>
+        <div class="cv-tags">
+          <span class="tag">C Programming</span>
+          <span class="tag">Assembly</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Physics</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>🎓 Education</h2>
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-title-group">
+            <h3>Johann Wolfgang Goethe-Universitët</h3>
+            <h4>PhD in Physics</h4>
+          </div>
+          <div class="cv-duration">2023.08 - 2026.07</div>
+        </div>
+        <p>
+          As a Ph.D. student in physics, I focused on developing effective
+          theories to explore inaccessible regions of the quantum
+          chromodynamics (QCD) phase diagram, particularly for cold and
+          dense states. I developed advanced mathematical frameworks and
+          applied graph-theoretical methods to solve complex equations
+          analytically.
+        </p>
+        <p>
+          Through my doctoral work, I gained solid expertise in research
+          methodology and the use of high-performance computing (HPC) to
+          manage extensive calculations. I participated in several
+          international conferences, where I both presented and published
+          my research findings.
+        </p>
+      </div>
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-title-group">
+            <h3>Norwegian University of Science and Technology (NTNU)</h3>
+            <h4>Masters in Physics - Graduate of Excellence</h4>
+          </div>
+          <div class="cv-duration">2023.08 - 2026.07</div>
+        </div>
+        <p>
+          As a master’s student in physics, I worked with effective models
+          in high-energy particle physics to study the phase diagram of
+          quantum chromodynamics (QCD). I compared various mathematical
+          methods to solve complex equations and achieved valuable results.
+          For my outstanding efforts, I was awarded the prize for best
+          master’s student at the Faculty of Science.
+        </p>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>🚀 Projects</h2>
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-title-group">
+            <h3>Some title</h3>
+          </div>
+          <div class="cv-duration">20xx</div>
+        </div>
+        <p>
+        </p>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>🌟 Other experience</h2>
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-title-group">
+            <h3>Some title</h3>
+          </div>
+          <div class="cv-duration">20xx</div>
+        </div>
+        <p>
+        </p>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>🏆 Courses & Certifications</h2>
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-title-group">
+            <h3>Some title</h3>
+          </div>
+          <div class="cv-duration">20xx</div>
+        </div>
+        <p>
+        </p>
+      </div>
+    </section>
+
+  <section class="cv-section">
+    <h2>🌍 Languages</h2>
+    <div class="language-list">
+      <div class="language-item">
+        <div class="language-name">
+          <span>🇳🇴</span>
+          Norwegian
+        </div>
+        <div class="language-level">Native</div>
+      </div>
+      <div class="language-item">
+        <div class="language-name">
+          <span>🇬🇧</span>
+          English
+        </div>
+        <div class="language-level">Excellent</div>
+      </div>
+      <div class="language-item">
+        <div class="language-name">
+          <span>🇯🇵</span>
+          Japanese
+        </div>
+        <div class="language-level">Basic</div>
+      </div>
+    </div>
+  </section>
+
+    <section class="cv-section">
+      <h2>📖 Theses</h2>
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <div class="cv-title-group">
+            <h3>Some title</h3>
+          </div>
+          <div class="cv-duration">20xx</div>
+        </div>
+        <p>
+        </p>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h2>📚 Publications</h2>
+    </section>
+
+    <section class="cv-section">
+      <h2>🛠️ Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Programming Languages</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">C# .NET</span>
+            <span class="skill-tag">C and C++</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Rust</span>
+            <span class="skill-tag">Lua</span>
+            <span class="skill-tag">VBA</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>Technologies</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Azure</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Optimization</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .cv-header {
+    text-align: center;
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+  }
+
+  .cv-tagline {
+    font-size: 1.4em;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 0.5em;
+  }
+
+  .cv-section {
+    margin-bottom: 3em;
+  }
+
+  .cv-section h2 {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 0.5em;
+    margin-bottom: 1.5em;
+  }
+
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    margin-bottom: 2em;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 0.8em 0;
+    border-bottom: 1px solid rgba(84, 142, 155, 0.2);
+    transition: all 0.2s ease;
+  }
+
+  .contact-item:last-child {
+    border-bottom: none;
+  }
+
+  .contact-item strong {
+    color: var(--primary-color);
+    font-weight: 600;
+    min-width: 80px;
+    font-size: 0.95em;
+  }
+
+  .contact-item::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .cv-item {
+    margin-bottom: 2.5em;
+    padding: 1.5em;
+    border-left: 4px solid var(--primary-color);
+    background: linear-gradient(135deg, transparent 0%, rgba(84, 142, 155, 0.05) 100%);
+    border-radius: 0 8px 8px 0;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .cv-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1em;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  .cv-title-group {
+    h3 {
+      font-size: 1.6em;
+      margin-bottom: 0.2em;
+      color: var(--primary-color);
+    }
+
+    h4 {
+      font-style: italic;
+      margin: 0;
+      color: var(--text-secondary);
+    }
+  }
+
+  .cv-duration {
+    font-family: var(--font-family-sans);
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: rgba(84, 142, 155, 0.1);
+    padding: 0.3em 0.8em;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .cv-tags, .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 1em;
+  }
+
+  .tag, .skill-tag {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.3em 0.8em;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-weight: 500;
+  }
+
+  .language-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding-left: 1.5em;
+    border-left: 4px solid var(--primary-color);
+    background: linear-gradient(135deg, transparent 0%, rgba(84, 142, 155, 0.05) 100%);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .language-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    gap: 1em;
+    padding: 0.5em 0;
+  }
+
+  .language-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-weight: 600;
+    min-width: 150px;
+    flex-shrink: 0;
+  }
+
+  .language-level {
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+  }
+
+  .skill-category h4 {
+    color: var(--primary-color);
+    margin-bottom: 1em;
+  }
+
+  @media (max-width: 768px) {
+    .cv-item-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cv-duration {
+      align-self: flex-start;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
