@@ -1,47 +1,57 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CvHeader from '../components/cv/CvHeader.astro';
+import CvSection from '../components/cv/CvSection.astro';
+import CvItem from '../components/cv/CvItem.astro';
+import CvTagList from '../components/cv/CvTagList.astro';
+import CvList from '../components/cv/CvList.astro';
+import CvListItem from '../components/cv/CvListItem.astro';
+import CvSkillsGrid from '../components/cv/CvSkillsGrid.astro';
+import CvSkillsCategory from '../components/cv/CvSkillsCategory.astro';
 
-const title = 'CV';
+const title = 'CV - Aleksandra';
 const description = 'My personal CV.';
 const permalink = `${Astro.site?.href}cv`;
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current="cv">
   <div class="container">
-    <header class="cv-header">
-      <h1>Aleksandra Glesaaen Ødegård</h1>
-      <p class="cv-tagline">Advocate of good academic software</p>
-    </header>
+    <CvHeader
+      title="Aleksandra Glesaaen Ødegård"
+      tagline="Advocate of good academic software"
+    />
 
-    <section class="cv-section">
-      <h2>📧 Contact</h2>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <strong>Email:</strong> your.email@example.com
-        </div>
-        <div class="contact-item">
-          <strong>Location:</strong> Norway
-        </div>
-        <div class="contact-item">
-          <strong>LinkedIn:</strong> linkedin.com/in/yourprofile
-        </div>
-        <div class="contact-item">
-          <strong>GitHub:</strong> github.com/yourusername
-        </div>
-      </div>
-    </section>
+    <!-- Contact information -->
+    <CvSection title="📧 Contact">
+      <CvList>
+        <CvListItem
+          key="Email"
+          icon="mdi:email"
+          icon_size="1.2em"
+          value="aleksandra@glesaaen.com"
+          value_ref="mailto:aleksandra@glesaaen.com" />
+        <CvListItem
+          key="GitHub"
+          icon="mdi:github"
+          icon_size="1.3em"
+          value="Irubataru"
+          value_ref="https://github.com/Irubataru" />
+        <CvListItem
+          key="LinkedIn"
+          icon="mdi:linkedin"
+          icon_size="1.3em"
+          value="Aleksandra Glesaaen Ødegård"
+          value_ref="https://www.linkedin.com/in/aleksandra-glesaaen-ødegård-49a367158" />
+        </CvList>
+    </CvSection>
 
-    <section class="cv-section">
-      <h2>💼 Work Experience</h2>
-
-      <div class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-title-group">
-            <h3>Omegapoint Norge</h3>
-            <h4>Expert</h4>
-          </div>
-          <div class="cv-duration">2024-11 - Present</div>
-        </div>
+    <!-- Work experience -->
+    <CvSection title="💼 Work Experience">
+      <CvItem date="2024-11 - Present">
+        <Fragment slot="title">
+          <h3>Omegapoint Norge</h3>
+          <h4>Expert</h4>
+        </Fragment>
         <p>
           At Omegapoint I led multiple internal projects focused on technology
           exploration and process optimization, expanding my expertise in
@@ -52,22 +62,29 @@ const permalink = `${Astro.site?.href}cv`;
           standards and restructuring project architectures to follow
           established conventions.
         </p>
-        <div class="cv-tags">
-          <span class="tag">Azure</span>
-          <span class="tag">Kubernetes</span>
-          <span class="tag">AI/ML</span>
-          <span class="tag">Frontend</span>
-        </div>
-      </div>
+        <Fragment slot="tags">
+          <CvTagList
+            tags={[
+              "C# .NET",
+              "Python",
+              "Next.js",
+              "Azure",
+              "AI",
+              "Docker",
+              "Kubernetes",
+              "CI/CD",
+              "Integration testing",
+              "Unit testing",
+            ]}
+            />
+        </Fragment>
+      </CvItem>
 
-      <div class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-title-group">
-            <h3>SINTEF Digital, Optimization</h3>
-            <h4>Researcher</h4>
-          </div>
-          <div class="cv-duration">2021-05 - 2024-10</div>
-        </div>
+      <CvItem date="2021-05 - 2024-10">
+        <Fragment slot="title">
+          <h3>SINTEF Digital, Optimization</h3>
+          <h4>Researcher</h4>
+        </Fragment>
         <p>
           As a researcher in the optimization group at SINTEF, I have developed
           advanced algorithms and applications to address complex challenges in
@@ -78,22 +95,27 @@ const permalink = `${Astro.site?.href}cv`;
           and challenges, tailoring technological solutions that drive
           efficiency and innovation within the sector.
         </p>
-        <div class="cv-tags">
-          <span class="tag">Healthcare</span>
-          <span class="tag">Optimization</span>
-          <span class="tag">Quantum Computing</span>
-          <span class="tag">Research</span>
-        </div>
-      </div>
+        <Fragment slot="tags">
+          <CvTagList
+            tags={[
+              "C# .NET",
+              "Python",
+              "Healthcare",
+              "Optimization",
+              "Quantum computing",
+              "Research and development",
+              "Project management",
+              "APIs"
+            ]}
+          />
+        </Fragment>
+      </CvItem>
 
-      <div class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-title-group">
-            <h3>Share Control AS</h3>
-            <h4>Software Developer and Project Leader</h4>
-          </div>
-          <div class="cv-duration">2018-10 - 2021-05</div>
-        </div>
+      <CvItem date="2018-10 - 2021-05">
+        <Fragment slot="title">
+          <h3>Share Control AS</h3>
+          <h4>Software Developer and Project Leader</h4>
+        </Fragment>
         <p>
           In my role as a software developer and project manager at
           ShareControl, I developed a customized application in Excel VBA to
@@ -106,22 +128,24 @@ const permalink = `${Astro.site?.href}cv`;
           experience in interdisciplinary collaboration and communication
           across fields.
         </p>
-        <div class="cv-tags">
-          <span class="tag">VBA</span>
-          <span class="tag">Project Management</span>
-          <span class="tag">IFRS 16</span>
-          <span class="tag">Excel</span>
-        </div>
-      </div>
+        <Fragment slot="tags">
+          <CvTagList
+            tags={[
+              "VBA",
+              "Python",
+              "Project management",
+              "IFRS 16",
+              "Excel"
+            ]}
+          />
+        </Fragment>
+      </CvItem>
 
-      <div class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-title-group">
-            <h3>Department of Physics, Swansea University</h3>
-            <h4>Postdoctoral Researcher</h4>
-          </div>
-          <div class="cv-duration">2016-10 - 2018-10</div>
-        </div>
+      <CvItem date="2016-10 - 2018-10">
+        <Fragment slot="title">
+          <h3>Department of Physics, Swansea University</h3>
+          <h4>Postdoctoral Researcher</h4>
+        </Fragment>
         <p>
           As a postdoctoral researcher at the Department of Physics at Swansea
           University, I worked on improving the performance and functionality
@@ -138,25 +162,28 @@ const permalink = `${Astro.site?.href}cv`;
           applications of machine learning to open new research opportunities
           in hadron spectroscopy.
         </p>
-        <div class="cv-tags">
-          <span class="tag">C Programming</span>
-          <span class="tag">Assembly</span>
-          <span class="tag">Machine Learning</span>
-          <span class="tag">Physics</span>
-        </div>
-      </div>
-    </section>
+        <Fragment slot="tags">
+          <CvTagList
+            tags={[
+              "C",
+              "C++",
+              "Python",
+              "Assembly",
+              "Machine learning",
+              "Physics"
+            ]}
+          />
+        </Fragment>
+      </CvItem>
+    </CvSection>
 
-    <section class="cv-section">
-      <h2>🎓 Education</h2>
-      <div class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-title-group">
-            <h3>Johann Wolfgang Goethe-Universitët</h3>
-            <h4>PhD in Physics</h4>
-          </div>
-          <div class="cv-duration">2023.08 - 2026.07</div>
-        </div>
+    <!-- Education -->
+    <CvSection title="🎓 Education">
+      <CvItem date="2013 - 2016">
+        <Fragment slot="title">
+          <h3>Johann Wolfgang Goethe-Universitët</h3>
+          <h4>PhD in Theoretical Physics</h4>
+        </Fragment>
         <p>
           As a Ph.D. student in physics, I focused on developing effective
           theories to explore inaccessible regions of the quantum
@@ -172,15 +199,13 @@ const permalink = `${Astro.site?.href}cv`;
           international conferences, where I both presented and published
           my research findings.
         </p>
-      </div>
-      <div class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-title-group">
-            <h3>Norwegian University of Science and Technology (NTNU)</h3>
-            <h4>Masters in Physics - Graduate of Excellence</h4>
-          </div>
-          <div class="cv-duration">2023.08 - 2026.07</div>
-        </div>
+      </CvItem>
+
+      <CvItem date="2008 - 2013">
+        <Fragment slot="title">
+          <h3>Norwegian University of Science and Technology (NTNU)</h3>
+          <h4>Masters in Physics - Graduate of Excellence</h4>
+        </Fragment>
         <p>
           As a master’s student in physics, I worked with effective models
           in high-energy particle physics to study the phase diagram of
@@ -189,310 +214,93 @@ const permalink = `${Astro.site?.href}cv`;
           For my outstanding efforts, I was awarded the prize for best
           master’s student at the Faculty of Science.
         </p>
-      </div>
-    </section>
+      </CvItem>
+    </CvSection>
 
-    <section class="cv-section">
-      <h2>🚀 Projects</h2>
-      <div class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-title-group">
-            <h3>Some title</h3>
-          </div>
-          <div class="cv-duration">20xx</div>
-        </div>
+    <!-- Projects -->
+    <CvSection title="🚀 Projects">
+    </CvSection>
+
+    <!-- Other experience -->
+    <CvSection title="🌟 Other experience">
+    </CvSection>
+
+    <!-- Courses & certifications -->
+    <CvSection title="🏆 Courses & Certifications">
+    </CvSection>
+
+    <!-- Languages -->
+    <CvSection title="🌍 Languages">
+      <CvList>
+        <CvListItem
+          key="Norwegian"
+          emoji="🇳🇴"
+          value="Native" />
+        <CvListItem
+          key="English"
+          emoji="🇬🇧"
+          value="Excellent" />
+        <CvListItem
+          key="Japanese"
+          emoji="🇯🇵"
+          value="Basic" />
+        </CvList>
+    </CvSection>
+
+    <!-- Theses -->
+    <CvSection title="📖 Theses">
+      <CvItem date="2016.07.31" link="https://github.com/Irubataru/phd-thesis">
+        <Fragment slot="title">
+          <h3>Heavy Quark QCD at Finite Temperature and Density Using an Effective Theory</h3>
+          <h4>PhD thesis</h4>
+          <h5>Supervisors: Prof. Dr. Owe Philipsen, and Prof. Dr. Dirk-Hermann Rischke</h5>
+        </Fragment>
+
         <p>
+          In this work I used an effective theory approach to study the cold
+          and dense limit of heavy QCD from first principles. I developed both
+          computational and graphical tools and methods for carrying out the
+          necessary mathematics to high order. Much of the work is also
+          dedicated to the methods of resummation and their advantages.
         </p>
-      </div>
-    </section>
+      </CvItem>
 
-    <section class="cv-section">
-      <h2>🌟 Other experience</h2>
-      <div class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-title-group">
-            <h3>Some title</h3>
-          </div>
-          <div class="cv-duration">20xx</div>
-        </div>
+      <CvItem date="2013.05.31" link="https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/246896">
+        <Fragment slot="title">
+          <h3>The Chiral Phase Transition in QCD: Mean-Field Versus the Functional Renormalisation Group</h3>
+          <h4>Master thesis</h4>
+          <h5>Supervisor: Prof. Jens Oluf Andersen</h5>
+        </Fragment>
+
         <p>
+          For my masters work I made use of low energy effective theories, more
+          specifically the quark extended linear sigma model, to analyse the
+          properties of the breaking of chiral symmetry in QCD, and the
+          emerging phase diagram. Also made use of the functional
+          renormalisation group to extract the correct low energy properties of
+          the quantum field theory.
         </p>
-      </div>
-    </section>
 
-    <section class="cv-section">
-      <h2>🏆 Courses & Certifications</h2>
-      <div class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-title-group">
-            <h3>Some title</h3>
-          </div>
-          <div class="cv-duration">20xx</div>
-        </div>
-        <p>
-        </p>
-      </div>
-    </section>
+      </CvItem>
+    </CvSection>
 
-  <section class="cv-section">
-    <h2>🌍 Languages</h2>
-    <div class="language-list">
-      <div class="language-item">
-        <div class="language-name">
-          <span>🇳🇴</span>
-          Norwegian
-        </div>
-        <div class="language-level">Native</div>
-      </div>
-      <div class="language-item">
-        <div class="language-name">
-          <span>🇬🇧</span>
-          English
-        </div>
-        <div class="language-level">Excellent</div>
-      </div>
-      <div class="language-item">
-        <div class="language-name">
-          <span>🇯🇵</span>
-          Japanese
-        </div>
-        <div class="language-level">Basic</div>
-      </div>
-    </div>
-  </section>
+    <!-- Publications -->
+    <CvSection title="📚 Publications">
+    </CvSection>
 
-    <section class="cv-section">
-      <h2>📖 Theses</h2>
-      <div class="cv-item">
-        <div class="cv-item-header">
-          <div class="cv-title-group">
-            <h3>Some title</h3>
-          </div>
-          <div class="cv-duration">20xx</div>
-        </div>
-        <p>
-        </p>
-      </div>
-    </section>
-
-    <section class="cv-section">
-      <h2>📚 Publications</h2>
-    </section>
-
-    <section class="cv-section">
-      <h2>🛠️ Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h4>Programming Languages</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">C# .NET</span>
-            <span class="skill-tag">C and C++</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">TypeScript</span>
-            <span class="skill-tag">Rust</span>
-            <span class="skill-tag">Lua</span>
-            <span class="skill-tag">VBA</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h4>Technologies</h4>
-          <div class="skill-tags">
-            <span class="skill-tag">Azure</span>
-            <span class="skill-tag">Kubernetes</span>
-            <span class="skill-tag">Machine Learning</span>
-            <span class="skill-tag">Optimization</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Skills -->
+    <CvSection title="🛠️ Skills">
+      <CvSkillsGrid>
+        <CvSkillsCategory
+          title="Programming languages"
+          skills={["C# .NET", "C", "C++", "Python", "TypeScript", "Rust", "Lua", "VBA"]}/>
+        <CvSkillsCategory
+          title="Technologies"
+          skills={["Azure", "Docker", "Kubernetes", "Machine learning", "Optimization"]}/>
+        <CvSkillsCategory
+          title="Typography and frontend"
+          skills={["Latex", "HTML", "CSS","Vue.js", "Astro", "React", "Next.js"]}/>
+      </CvSkillsGrid>
+    </CvSection>
   </div>
 </BaseLayout>
-
-<style>
-  .cv-header {
-    text-align: center;
-    margin-bottom: 3em;
-    padding-bottom: 2em;
-  }
-
-  .cv-tagline {
-    font-size: 1.4em;
-    color: var(--text-secondary);
-    font-style: italic;
-    margin-top: 0.5em;
-  }
-
-  .cv-section {
-    margin-bottom: 3em;
-  }
-
-  .cv-section h2 {
-    color: var(--primary-color);
-    border-bottom: 1px solid var(--primary-color);
-    padding-bottom: 0.5em;
-    margin-bottom: 1.5em;
-  }
-
-  .contact-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8em;
-    margin-bottom: 2em;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    padding: 0.8em 0;
-    border-bottom: 1px solid rgba(84, 142, 155, 0.2);
-    transition: all 0.2s ease;
-  }
-
-  .contact-item:last-child {
-    border-bottom: none;
-  }
-
-  .contact-item strong {
-    color: var(--primary-color);
-    font-weight: 600;
-    min-width: 80px;
-    font-size: 0.95em;
-  }
-
-  .contact-item::before {
-    content: '';
-    width: 4px;
-    height: 4px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .cv-item {
-    margin-bottom: 2.5em;
-    padding: 1.5em;
-    border-left: 4px solid var(--primary-color);
-    background: linear-gradient(135deg, transparent 0%, rgba(84, 142, 155, 0.05) 100%);
-    border-radius: 0 8px 8px 0;
-
-    p:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .cv-item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1em;
-    flex-wrap: wrap;
-    gap: 1em;
-  }
-
-  .cv-title-group {
-    h3 {
-      font-size: 1.6em;
-      margin-bottom: 0.2em;
-      color: var(--primary-color);
-    }
-
-    h4 {
-      font-style: italic;
-      margin: 0;
-      color: var(--text-secondary);
-    }
-  }
-
-  .cv-duration {
-    font-family: var(--font-family-sans);
-    font-size: 0.9em;
-    font-weight: 600;
-    color: var(--text-secondary);
-    background: rgba(84, 142, 155, 0.1);
-    padding: 0.3em 0.8em;
-    border-radius: 20px;
-    white-space: nowrap;
-  }
-
-  .cv-tags, .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5em;
-    margin-top: 1em;
-  }
-
-  .tag, .skill-tag {
-    background: var(--primary-color);
-    color: white;
-    padding: 0.3em 0.8em;
-    border-radius: 15px;
-    font-size: 0.85em;
-    font-weight: 500;
-  }
-
-  .language-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-    padding-left: 1.5em;
-    border-left: 4px solid var(--primary-color);
-    background: linear-gradient(135deg, transparent 0%, rgba(84, 142, 155, 0.05) 100%);
-    border-radius: 0 8px 8px 0;
-  }
-
-  .language-item {
-    display: flex;
-    align-items: center;
-    font-size: 1.2em;
-    gap: 1em;
-    padding: 0.5em 0;
-  }
-
-  .language-name {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    font-weight: 600;
-    min-width: 150px;
-    flex-shrink: 0;
-  }
-
-  .language-level {
-    color: var(--text-secondary);
-    font-style: italic;
-  }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2em;
-  }
-
-  .skill-category h4 {
-    color: var(--primary-color);
-    margin-bottom: 1em;
-  }
-
-  @media (max-width: 768px) {
-    .cv-item-header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .cv-duration {
-      align-self: flex-start;
-    }
-
-    .contact-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .skills-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>

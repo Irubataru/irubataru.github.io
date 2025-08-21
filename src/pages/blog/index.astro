@@ -2,9 +2,9 @@
 import { getCollection } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = 'Blog';
+const title = 'Blog - Aleksandra';
 const description = 'Latest articles.';
-const permalink = `${Astro.site.href}blog`;
+const permalink = `${Astro.site?.href}blog`;
 
 let allPosts = await getCollection('posts')
 allPosts = allPosts.sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());

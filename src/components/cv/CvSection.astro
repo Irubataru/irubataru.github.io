@@ -1,0 +1,25 @@
+---
+export interface Props {
+  title: string
+}
+
+const { title } = Astro.props;
+---
+
+<section class="cv-section">
+  <h2>{title}</h2>
+  <slot />
+</section>
+
+<style>
+  .cv-section {
+    margin-bottom: 3em;
+  }
+
+  .cv-section h2 {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 0.5em;
+    margin-bottom: 1.5em;
+  }
+</style>

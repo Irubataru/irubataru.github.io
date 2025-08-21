@@ -1,0 +1,99 @@
+---
+import CvHeaderTag from './CvHeaderTag.astro';
+import {Icon} from 'astro-icon/components';
+
+export interface Props {
+  date?: string;
+  link?: string;
+}
+
+const { date, link } = Astro.props;
+
+---
+
+<div class="cv-item">
+  <div class="cv-item-header">
+    <div class="cv-title-group">
+      <slot name="title" />
+    </div>
+    <div class="cv-header-tag-group">
+      {link && (
+      <div class="cv-header-tag">
+        <CvHeaderTag href={link}>
+          <Icon name="mdi:link" size="1.4em" />
+        </CvHeaderTag>
+      </div>
+      )}
+      {date && (
+        <CvHeaderTag>
+          {date}
+        </CvHeaderTag>
+      )}
+    </div>
+  </div>
+  <div class="cv-content">
+    <slot />
+  </div>
+  <slot name="tags" />
+</div>
+
+<style>
+  .cv-item {
+    margin-bottom: 2.5em;
+    padding: 1.5em;
+    border-left: 4px solid var(--primary-color);
+    background: linear-gradient(135deg, transparent 0%, rgba(84, 142, 155, 0.05) 100%);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .cv-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1em;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  .cv-title-group :global(h3) {
+    font-size: 1.6em;
+    margin-bottom: 0.2em;
+    color: var(--primary-color);
+  }
+
+  .cv-title-group :global(h4) {
+    font-style: italic;
+    margin: 0;
+    color: var(--text-secondary);
+  }
+
+  .cv-title-group :global(h5) {
+    font-style: italic;
+    margin-top: 0.3em;
+    color: var(--text-secondary);
+  }
+
+  .cv-header-tag-group {
+    display: flex;
+    justify-content: start;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .cv-content :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  [data-icon] {
+    color: var(--primary-color);
+    vertical-align: middle;
+  }
+
+  @media (max-width: 768px) {
+    .cv-item-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

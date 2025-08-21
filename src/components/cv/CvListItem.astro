@@ -1,0 +1,75 @@
+---
+import {Icon} from 'astro-icon/components';
+
+export interface Props {
+  key: string
+  value: string
+  emoji?: string
+  icon?: string
+  icon_size?: string
+  value_ref?: string
+}
+
+const { key, value, emoji, icon, icon_size, value_ref } = Astro.props;
+
+---
+
+<div class="cv-list-item">
+  <div class="cv-list-key">
+    {icon && (
+      <Icon name={icon} size={icon_size} />
+    )}
+    {emoji && (
+      <span>{emoji}</span>
+    )}
+    {key}
+  </div>
+  <div class="cv-list-value">
+    {value_ref ? (
+      <a href={value_ref}>{value}</a>
+    ) : (
+      <div>{value}</div>
+    )}
+  </div>
+</div>
+
+<style>
+  .cv-list-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    gap: 1em;
+    padding: 0.5em 0;
+  }
+
+  .cv-list-key {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-weight: 600;
+    min-width: 150px;
+    flex-shrink: 0;
+  }
+
+  .cv-list-value {
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  [data-icon] {
+    color: var(--primary-color);
+    vertical-align: middle;
+  }
+
+  [data-icon="mdi:email"] {
+    color: #42a5f5;
+  }
+
+  [data-icon="mdi:github"] {
+    color: #546e7a;
+  }
+
+  [data-icon="mdi:linkedin"] {
+    color: #0a66c2;
+  }
+</style>

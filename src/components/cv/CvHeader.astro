@@ -1,0 +1,30 @@
+---
+export interface Props {
+  title: string
+  tagline?: string
+}
+
+const { title, tagline } = Astro.props;
+---
+
+<header class="cv-header">
+  <h1>{title}</h1>
+  {tagline && (
+    <p class="cv-tagline">{tagline}</p>
+  )}
+</header>
+
+<style>
+  .cv-header {
+    text-align: center;
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+  }
+
+  .cv-tagline {
+    font-size: 1.4em;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 0.5em;
+  }
+</style>
