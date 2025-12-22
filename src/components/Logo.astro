@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+import aleksandra from '../images/Aleksandra_25.png';
+---
+<style>
+  img {
+    display: block;
+    width: 75px;
+    border-radius: 50%;
+  }
+
+  @media screen and (max-width: 520px) {
+    img {
+      display: none;
+    }
+  }
+</style>
+
+<a href="/">
+  <Image src={aleksandra} alt="Homepage logo" />
+</a>

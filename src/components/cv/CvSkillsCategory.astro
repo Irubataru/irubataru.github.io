@@ -1,0 +1,32 @@
+---
+import CvTag from "./CvTag.astro";
+
+export interface Props {
+  title: string
+  skills: string[]
+}
+
+const { title, skills } = Astro.props;
+---
+<div class="skill-category">
+  <h4>{title}</h4>
+  <div class="skill-tags">
+    {
+      skills.map(skill => <CvTag value={skill} />)
+    }
+  </div>
+</div>
+
+<style>
+  .skill-category h4 {
+    color: var(--primary-color);
+    margin-bottom: 1em;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 1em;
+  }
+</style>

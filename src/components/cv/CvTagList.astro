@@ -1,0 +1,25 @@
+---
+import CvTag from './CvTag.astro';
+
+export interface Props {
+  tags: string[]
+}
+
+const { tags } = Astro.props;
+
+---
+
+<div class="cv-tags">
+  {
+    tags.map(tag => <CvTag value={tag} />)
+  }
+</div>
+
+<style>
+  .cv-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 1.5em;
+  }
+</style>

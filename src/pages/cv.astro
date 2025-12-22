@@ -1,0 +1,306 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CvHeader from '../components/cv/CvHeader.astro';
+import CvSection from '../components/cv/CvSection.astro';
+import CvItem from '../components/cv/CvItem.astro';
+import CvTagList from '../components/cv/CvTagList.astro';
+import CvList from '../components/cv/CvList.astro';
+import CvListItem from '../components/cv/CvListItem.astro';
+import CvSkillsGrid from '../components/cv/CvSkillsGrid.astro';
+import CvSkillsCategory from '../components/cv/CvSkillsCategory.astro';
+
+const title = 'CV - Aleksandra';
+const description = 'My personal CV.';
+const permalink = `${Astro.site?.href}cv`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="cv">
+  <div class="container">
+    <CvHeader
+      title="Aleksandra Glesaaen Ødegård"
+      tagline="Advocate of good academic software"
+    />
+
+    <!-- Contact information -->
+    <CvSection title="📧 Contact">
+      <CvList>
+        <CvListItem
+          key="Email"
+          icon="mdi:email"
+          icon_size="1.2em"
+          value="aleksandra@glesaaen.com"
+          value_ref="mailto:aleksandra@glesaaen.com" />
+        <CvListItem
+          key="GitHub"
+          icon="mdi:github"
+          icon_size="1.3em"
+          value="Irubataru"
+          value_ref="https://github.com/Irubataru" />
+        <CvListItem
+          key="LinkedIn"
+          icon="mdi:linkedin"
+          icon_size="1.3em"
+          value="Aleksandra Glesaaen Ødegård"
+          value_ref="https://www.linkedin.com/in/aleksandra-glesaaen-ødegård-49a367158" />
+        </CvList>
+    </CvSection>
+
+    <!-- Work experience -->
+    <CvSection title="💼 Work Experience">
+      <CvItem date="2024-11 - Present">
+        <Fragment slot="title">
+          <h3>Omegapoint Norge</h3>
+          <h4>Expert</h4>
+        </Fragment>
+        <p>
+          At Omegapoint I led multiple internal projects focused on technology
+          exploration and process optimization, expanding my expertise in
+          frontend development, Azure cloud services, and Kubernetes
+          orchestration. I developed an AI-driven search solution for the
+          company event system and drove significant process improvements by
+          standardizing integration testing practices to align with industry
+          standards and restructuring project architectures to follow
+          established conventions.
+        </p>
+        <Fragment slot="tags">
+          <CvTagList
+            tags={[
+              "C# .NET",
+              "Python",
+              "Next.js",
+              "Azure",
+              "AI",
+              "Docker",
+              "Kubernetes",
+              "CI/CD",
+              "Integration testing",
+              "Unit testing",
+            ]}
+            />
+        </Fragment>
+      </CvItem>
+
+      <CvItem date="2021-05 - 2024-10">
+        <Fragment slot="title">
+          <h3>SINTEF Digital, Optimization</h3>
+          <h4>Researcher</h4>
+        </Fragment>
+        <p>
+          As a researcher in the optimization group at SINTEF, I have developed
+          advanced algorithms and applications to address complex challenges in
+          healthcare, the aviation industry, construction, quantum computing,
+          and the architecture sector. In addition to my technical development
+          work, I held market responsibility for the healthcare sector, where I
+          worked closely with stakeholders to understand their specific needs
+          and challenges, tailoring technological solutions that drive
+          efficiency and innovation within the sector.
+        </p>
+        <Fragment slot="tags">
+          <CvTagList
+            tags={[
+              "C# .NET",
+              "Python",
+              "Healthcare",
+              "Optimization",
+              "Quantum computing",
+              "Research and development",
+              "Project management",
+              "APIs"
+            ]}
+          />
+        </Fragment>
+      </CvItem>
+
+      <CvItem date="2018-10 - 2021-05">
+        <Fragment slot="title">
+          <h3>Share Control AS</h3>
+          <h4>Software Developer and Project Leader</h4>
+        </Fragment>
+        <p>
+          In my role as a software developer and project manager at
+          ShareControl, I developed a customized application in Excel VBA to
+          manage and monitor lease contracts in compliance with the IFRS 16
+          accounting standard. The application was designed to provide clients
+          with a straightforward overview and perform the necessary
+          calculations as part of their accounting processes, while also being
+          transparent and easily auditable to meet documentation and
+          traceability requirements. Through this work, I gained significant
+          experience in interdisciplinary collaboration and communication
+          across fields.
+        </p>
+        <Fragment slot="tags">
+          <CvTagList
+            tags={[
+              "VBA",
+              "Python",
+              "Project management",
+              "IFRS 16",
+              "Excel"
+            ]}
+          />
+        </Fragment>
+      </CvItem>
+
+      <CvItem date="2016-10 - 2018-10">
+        <Fragment slot="title">
+          <h3>Department of Physics, Swansea University</h3>
+          <h4>Postdoctoral Researcher</h4>
+        </Fragment>
+        <p>
+          As a postdoctoral researcher at the Department of Physics at Swansea
+          University, I worked on improving the performance and functionality
+          of an existing C-based legacy code for advanced particle physics
+          calculations. Through optimization and detailed adjustments,
+          including the use of hand-written assembly operations, I achieved an
+          impressive performance increase, with a 20x improvement compared to
+          the previous code.
+        </p>
+        <p>
+          She also gained valuable experience with unit
+          testing of complex, parallelized code, contributing to increased
+          reliability and maintainability. Additionally, Aleksandra explored
+          applications of machine learning to open new research opportunities
+          in hadron spectroscopy.
+        </p>
+        <Fragment slot="tags">
+          <CvTagList
+            tags={[
+              "C",
+              "C++",
+              "Python",
+              "Assembly",
+              "Machine learning",
+              "Physics"
+            ]}
+          />
+        </Fragment>
+      </CvItem>
+    </CvSection>
+
+    <!-- Education -->
+    <CvSection title="🎓 Education">
+      <CvItem date="2013 - 2016">
+        <Fragment slot="title">
+          <h3>Johann Wolfgang Goethe-Universitët</h3>
+          <h4>PhD in Theoretical Physics</h4>
+        </Fragment>
+        <p>
+          As a Ph.D. student in physics, I focused on developing effective
+          theories to explore inaccessible regions of the quantum
+          chromodynamics (QCD) phase diagram, particularly for cold and
+          dense states. I developed advanced mathematical frameworks and
+          applied graph-theoretical methods to solve complex equations
+          analytically.
+        </p>
+        <p>
+          Through my doctoral work, I gained solid expertise in research
+          methodology and the use of high-performance computing (HPC) to
+          manage extensive calculations. I participated in several
+          international conferences, where I both presented and published
+          my research findings.
+        </p>
+      </CvItem>
+
+      <CvItem date="2008 - 2013">
+        <Fragment slot="title">
+          <h3>Norwegian University of Science and Technology (NTNU)</h3>
+          <h4>Masters in Physics - Graduate of Excellence</h4>
+        </Fragment>
+        <p>
+          As a master’s student in physics, I worked with effective models
+          in high-energy particle physics to study the phase diagram of
+          quantum chromodynamics (QCD). I compared various mathematical
+          methods to solve complex equations and achieved valuable results.
+          For my outstanding efforts, I was awarded the prize for best
+          master’s student at the Faculty of Science.
+        </p>
+      </CvItem>
+    </CvSection>
+
+    <!-- Projects -->
+    <CvSection title="🚀 Projects">
+    </CvSection>
+
+    <!-- Other experience -->
+    <CvSection title="🌟 Other experience">
+    </CvSection>
+
+    <!-- Courses & certifications -->
+    <CvSection title="🏆 Courses & Certifications">
+    </CvSection>
+
+    <!-- Languages -->
+    <CvSection title="🌍 Languages">
+      <CvList>
+        <CvListItem
+          key="Norwegian"
+          emoji="🇳🇴"
+          value="Native" />
+        <CvListItem
+          key="English"
+          emoji="🇬🇧"
+          value="Excellent" />
+        <CvListItem
+          key="Japanese"
+          emoji="🇯🇵"
+          value="Basic" />
+        </CvList>
+    </CvSection>
+
+    <!-- Theses -->
+    <CvSection title="📖 Theses">
+      <CvItem date="2016.07.31" link="https://github.com/Irubataru/phd-thesis">
+        <Fragment slot="title">
+          <h3>Heavy Quark QCD at Finite Temperature and Density Using an Effective Theory</h3>
+          <h4>PhD thesis</h4>
+          <h5>Supervisors: Prof. Dr. Owe Philipsen, and Prof. Dr. Dirk-Hermann Rischke</h5>
+        </Fragment>
+
+        <p>
+          In this work I used an effective theory approach to study the cold
+          and dense limit of heavy QCD from first principles. I developed both
+          computational and graphical tools and methods for carrying out the
+          necessary mathematics to high order. Much of the work is also
+          dedicated to the methods of resummation and their advantages.
+        </p>
+      </CvItem>
+
+      <CvItem date="2013.05.31" link="https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/246896">
+        <Fragment slot="title">
+          <h3>The Chiral Phase Transition in QCD: Mean-Field Versus the Functional Renormalisation Group</h3>
+          <h4>Master thesis</h4>
+          <h5>Supervisor: Prof. Jens Oluf Andersen</h5>
+        </Fragment>
+
+        <p>
+          For my masters work I made use of low energy effective theories, more
+          specifically the quark extended linear sigma model, to analyse the
+          properties of the breaking of chiral symmetry in QCD, and the
+          emerging phase diagram. Also made use of the functional
+          renormalisation group to extract the correct low energy properties of
+          the quantum field theory.
+        </p>
+
+      </CvItem>
+    </CvSection>
+
+    <!-- Publications -->
+    <CvSection title="📚 Publications">
+    </CvSection>
+
+    <!-- Skills -->
+    <CvSection title="🛠️ Skills">
+      <CvSkillsGrid>
+        <CvSkillsCategory
+          title="Programming languages"
+          skills={["C# .NET", "C", "C++", "Python", "TypeScript", "Rust", "Lua", "VBA"]}/>
+        <CvSkillsCategory
+          title="Technologies"
+          skills={["Azure", "Docker", "Kubernetes", "Machine learning", "Optimization"]}/>
+        <CvSkillsCategory
+          title="Typography and frontend"
+          skills={["Latex", "HTML", "CSS","Vue.js", "Astro", "React", "Next.js"]}/>
+      </CvSkillsGrid>
+    </CvSection>
+  </div>
+</BaseLayout>
